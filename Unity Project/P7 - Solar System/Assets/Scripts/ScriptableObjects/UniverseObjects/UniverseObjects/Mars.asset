@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Mars
   m_EditorClassIdentifier: 
   name: Mars
-  facts: []
+  facts:
+  - 'The surface of Mars has an orange-reddish color because its soil has iron oxide
+    or rust particles in it. '
   mass: 6.39e+23
   radius: 3390
   rotationLength: 24.62

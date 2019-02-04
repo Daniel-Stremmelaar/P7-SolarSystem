@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Venus
   m_EditorClassIdentifier: 
   name: Venus
-  facts: []
+  facts:
+  - After the moon, Venus is the brightest object in the night sky.
   mass: 4.867e+24
   radius: 6052
   rotationLength: 2802

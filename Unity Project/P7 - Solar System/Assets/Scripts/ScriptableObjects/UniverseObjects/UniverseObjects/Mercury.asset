@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Mercury
   m_EditorClassIdentifier: 
   name: Mercury
-  facts: []
+  facts:
+  - Greek astronomer and philosopher Timocharis of Alexandria made the first recorded
+    observation of Mercury in 265 BC.
   mass: 3.285e+23
   radius: 2440
   rotationLength: 1407.5

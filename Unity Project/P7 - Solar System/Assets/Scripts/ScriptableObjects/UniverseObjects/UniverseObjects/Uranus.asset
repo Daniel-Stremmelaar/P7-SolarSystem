@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Uranus
   m_EditorClassIdentifier: 
   name: Uranus
-  facts: []
+  facts:
+  - With temperatures hitting as low as -224 degrees Celsius, Uranus is considered
+    the coldest planet in our solar system.
   mass: 8.681e+25
   radius: 25362
   rotationLength: 17.23

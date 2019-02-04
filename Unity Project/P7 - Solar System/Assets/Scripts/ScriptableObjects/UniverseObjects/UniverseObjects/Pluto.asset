@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Pluto
   m_EditorClassIdentifier: 
   name: Pluto
-  facts: []
+  facts:
+  - Pluto is not considered as a planet in the solar system, since it is a dwarf planet.
   mass: 1.309e+22
   radius: 1188
   rotationLength: 153.36

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Sun
   m_EditorClassIdentifier: 
   name: Sun
-  facts: []
+  facts:
+  - The light from the sun takes eight minutes to reach the Earth.
   mass: 1.989e+30
   radius: 695508
   rotationLength: 588

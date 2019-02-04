@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class InformationBox : MonoBehaviour {
     public UniverseObject currentObject;
     public TextMeshProUGUI nameTextObject;
+    public TextMeshProUGUI factTextObject;
     public TextMeshProUGUI massTextObject;
     public TextMeshProUGUI radiusTextObject;
     public TextMeshProUGUI rotationTextObject;
