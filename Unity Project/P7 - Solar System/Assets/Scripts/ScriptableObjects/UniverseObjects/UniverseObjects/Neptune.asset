@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Neptune
   m_EditorClassIdentifier: 
   name: Neptune
+  facts: []
   mass: 1.024e+26
   radius: 24622
+  rotationLength: 16.1

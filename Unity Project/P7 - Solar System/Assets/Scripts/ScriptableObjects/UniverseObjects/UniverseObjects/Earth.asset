@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Earth
   m_EditorClassIdentifier: 
   name: Earth
+  facts:
+  - As far as we know, the Earth is the only planet which has life on it.
   mass: 5.9736e+24
-  radius: 6.371
+  radius: 6371
+  rotationLength: 24

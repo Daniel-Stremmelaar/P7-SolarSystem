@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Pluto
   m_EditorClassIdentifier: 
   name: Pluto
+  facts: []
   mass: 1.309e+22
   radius: 1188
+  rotationLength: 153.36

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Uranus
   m_EditorClassIdentifier: 
   name: Uranus
+  facts: []
   mass: 8.681e+25
   radius: 25362
+  rotationLength: 17.23

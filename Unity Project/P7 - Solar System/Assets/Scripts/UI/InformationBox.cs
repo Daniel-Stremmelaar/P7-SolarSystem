@@ -1,27 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [ExecuteInEditMode]
 public class InformationBox : MonoBehaviour {
     public UniverseObject currentObject;
-    public Transform nameTextObject;
-    public Transform massTextObject;
-    public Transform radiusTextObject;
+    public TextMeshProUGUI nameTextObject;
+    public TextMeshProUGUI massTextObject;
+    public TextMeshProUGUI radiusTextObject;
+    public TextMeshProUGUI rotationTextObject;
 
     void Update () {
-        SetValues();
+        SetValues ();
     }
 
     void SetValues () {
-        nameTextObject.GetComponent<TextMeshProUGUI> ().text = 
-        currentObject.name;
-        massTextObject.GetComponent<TextMeshProUGUI> ().text = 
-        currentObject.mass.ToString ();
-        radiusTextObject.GetComponent<TextMeshProUGUI> ().text = 
-        currentObject.radius.ToString();
+        nameTextObject.text = currentObject.name;
+        massTextObject.text = currentObject.mass.ToString ();
+        radiusTextObject.text = currentObject.radius.ToString ();
+        rotationTextObject.text = currentObject.rotationLength.ToString();
+
 
     }
 

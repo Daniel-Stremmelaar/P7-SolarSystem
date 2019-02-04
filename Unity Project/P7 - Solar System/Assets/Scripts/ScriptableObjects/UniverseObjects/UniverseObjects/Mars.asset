@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Mars
   m_EditorClassIdentifier: 
   name: Mars
+  facts: []
   mass: 6.39e+23
   radius: 3390
+  rotationLength: 24.62

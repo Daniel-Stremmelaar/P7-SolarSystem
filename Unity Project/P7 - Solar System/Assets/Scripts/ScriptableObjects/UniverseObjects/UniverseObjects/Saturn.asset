@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Saturn
   m_EditorClassIdentifier: 
   name: Saturn
+  facts: []
   mass: 5.683e+26
   radius: 58232
+  rotationLength: 10.7

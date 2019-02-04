@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Jupiter
   m_EditorClassIdentifier: 
   name: Jupiter
+  facts: []
   mass: 1.898e+27
   radius: 69911
+  rotationLength: 9.93

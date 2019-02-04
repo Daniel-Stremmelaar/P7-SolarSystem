@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Venus
   m_EditorClassIdentifier: 
   name: Venus
+  facts: []
   mass: 4.867e+24
   radius: 6052
+  rotationLength: 2802

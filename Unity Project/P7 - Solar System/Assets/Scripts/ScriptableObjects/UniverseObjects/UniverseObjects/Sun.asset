@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sun
   m_EditorClassIdentifier: 
   name: Sun
+  facts: []
   mass: 1.989e+30
   radius: 695508
+  rotationLength: 588

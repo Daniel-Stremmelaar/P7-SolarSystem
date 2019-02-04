@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Mercury
   m_EditorClassIdentifier: 
   name: Mercury
+  facts: []
   mass: 3.285e+23
   radius: 2440
+  rotationLength: 1407.5
