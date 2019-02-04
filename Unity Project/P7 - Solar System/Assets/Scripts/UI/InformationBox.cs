@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class InformationBox : MonoBehaviour {
     public UniverseObject currentObject;
-    public UniverseObject oldObject;
+    UniverseObject oldObject;
     public TextMeshProUGUI nameTextObject;
     public TextMeshProUGUI factTextObject;
     public TextMeshProUGUI massTextObject;
