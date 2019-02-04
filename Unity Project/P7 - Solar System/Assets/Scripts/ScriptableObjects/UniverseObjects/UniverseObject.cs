@@ -22,7 +22,7 @@ public class UniverseObject : ScriptableObject {
     [Tooltip ("Radius of the object in km")]
     public float radius;
 
-    [Tooltip ("Amount of hours it takes to make one full rotation")]
+    [Tooltip ("Amount of hours it takes to make one full rotation around itself")]
     public float rotationLength;
 
 }
