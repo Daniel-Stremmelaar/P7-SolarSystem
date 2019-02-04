@@ -16,6 +16,7 @@ public class Animate : MonoBehaviour
     {
         if(toggle) {
             GetComponent<Animator>().SetTrigger("Toggle");
+            toggle = false;
         }
     }
 }
