@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3e3fde0f87af5342a49495b3b0cde92, type: 3}
-  m_Name: Earth
+  m_Name: Jupiter
   m_EditorClassIdentifier: 
-  name: Earth
-  mass: 0
-  radius: 0
+  name: Jupiter
+  mass: 1.898e+27
+  radius: 69911

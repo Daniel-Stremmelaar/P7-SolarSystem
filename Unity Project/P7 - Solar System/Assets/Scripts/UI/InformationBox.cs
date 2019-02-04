@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [ExecuteInEditMode]
 public class InformationBox : MonoBehaviour {
@@ -15,9 +16,12 @@ public class InformationBox : MonoBehaviour {
     }
 
     void SetValues () {
-        nameTextObject.GetComponent<TextMeshProUGUI> ().text = currentObject.name;
-        massTextObject.GetComponent<TextMeshProUGUI> ().text = currentObject.mass.ToString ();
-        radiusTextObject.GetComponent<TextMeshProUGUI> ().text = currentObject.radius.ToString();
+        nameTextObject.GetComponent<TextMeshProUGUI> ().text = 
+        currentObject.name;
+        massTextObject.GetComponent<TextMeshProUGUI> ().text = 
+        currentObject.mass.ToString ();
+        radiusTextObject.GetComponent<TextMeshProUGUI> ().text = 
+        currentObject.radius.ToString();
 
     }
 
