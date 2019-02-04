@@ -23,6 +23,13 @@ public class InformationBox : MonoBehaviour {
         radiusTextObject.text = currentObject.radius.ToString ();
         rotationTextObject.text = currentObject.rotationLength.ToString();
 
+        string objectFact = "";
+        
+        int index = Random.Range(0, currentObject.facts.Count);
+        objectFact = currentObject.facts[index];
+
+        factTextObject.text = objectFact;
+
 
     }
 
