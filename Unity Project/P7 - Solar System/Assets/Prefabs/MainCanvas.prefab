@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 8035633190158432395}
   - component: {fileID: 2510525815212126514}
   m_Layer: 5
-  m_Name: InformationBox Newfont
+  m_Name: InformationBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
