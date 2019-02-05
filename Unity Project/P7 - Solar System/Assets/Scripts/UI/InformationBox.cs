@@ -14,7 +14,6 @@ public class InformationBox : MonoBehaviour {
     public TextMeshProUGUI rotationTextObject;
     public Animator animator;
 
-
     void SetValues () {
         nameTextObject.text = currentObject.name;
         massTextObject.text = currentObject.mass.ToString ();
@@ -30,6 +29,7 @@ public class InformationBox : MonoBehaviour {
     }
 
     public void OpenInfoBox(UniverseObject objectToShow) {
+        currentObject = objectToShow;
         SetValues();
         animator.SetTrigger("Toggle");
     }
