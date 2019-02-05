@@ -49,6 +49,10 @@ public class Menu : MonoBehaviour
                 liveOptions.SetActive(true);
                 Time.timeScale = 0;
             }
+            if(scene.buildIndex == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
         if(quitGame != null)
         {
