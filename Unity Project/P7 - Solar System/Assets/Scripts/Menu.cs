@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
     {
         if(mainMenu != null)
         {
-            mainMenu.onClick.AddListener(delegate { SceneManager.LoadScene(0) });
+            mainMenu.onClick.AddListener(delegate { SceneManager.LoadScene(0); });
         }
         if(game != null)
         {
