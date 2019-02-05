@@ -428,6 +428,7 @@ MonoBehaviour:
   massTextObject: {fileID: 6548998602320330207}
   radiusTextObject: {fileID: 3838191362190899631}
   rotationTextObject: {fileID: 9135032402988800813}
+  animator: {fileID: 2510525815212126514}
 --- !u!95 &2510525815212126514
 Animator:
   serializedVersion: 3
