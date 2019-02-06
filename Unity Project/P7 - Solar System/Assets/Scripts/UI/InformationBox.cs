@@ -7,23 +7,12 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class InformationBox : MonoBehaviour {
     public UniverseObject currentObject;
-    UniverseObject oldObject;
     public TextMeshProUGUI nameTextObject;
     public TextMeshProUGUI factTextObject;
     public TextMeshProUGUI massTextObject;
     public TextMeshProUGUI radiusTextObject;
     public TextMeshProUGUI rotationTextObject;
-
-    void Start () {
-        oldObject = currentObject;
-    }
-
-    void Update () {
-        if (oldObject != currentObject) {
-            SetValues ();
-            oldObject = currentObject;
-        }
-    }
+    public Animator animator;
 
     void SetValues () {
         nameTextObject.text = currentObject.name;
@@ -37,5 +26,11 @@ public class InformationBox : MonoBehaviour {
         objectFact = currentObject.facts[index];
 
         factTextObject.text = objectFact;
+    }
+
+    public void OpenInfoBox(UniverseObject objectToShow) {
+        currentObject = objectToShow;
+        SetValues();
+        animator.SetTrigger("Toggle");
     }
 }
