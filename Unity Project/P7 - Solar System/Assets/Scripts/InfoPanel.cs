@@ -8,12 +8,14 @@ public class InfoPanel : SelectableObject
     // Start is called before the first frame update
     void Start()
     {
+        //needs conversion to world space
         uiElementOffset = transform.forward * elementDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //needs conversion to world space
         uiElement.transform.position = transform.position + uiElementOffset;
         uiElement.transform.rotation.SetLookRotation(transform.forward, transform.up);
     }
