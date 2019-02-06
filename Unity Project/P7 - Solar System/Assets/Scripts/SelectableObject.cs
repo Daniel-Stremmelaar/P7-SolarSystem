@@ -9,6 +9,6 @@ public class SelectableObject : MonoBehaviour
 
     void Update()
     {
-        uiElement.transform.position = transform.position + uiElementOffset;    
+        uiElement.transform.position = transform.position + uiElementOffset;
     }
 }
