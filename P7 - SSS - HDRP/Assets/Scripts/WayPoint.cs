@@ -47,18 +47,26 @@ public class WayPoint : MonoBehaviour
 
     void Follow(Transform follower)
     {
-        follower.position = Vector3.MoveTowards(follower.position, points[curFollowPoint], Time.deltaTime * speed);
-        if (Vector3.Distance(follower.position, points[curFollowPoint]) < 0.3f)
+        Vector3 lastPos = follower.position;
+        for (int i = 0; i < 1; i++)
         {
-            if (curFollowPoint < points.Count - 1)
+            follower.position = Vector3.MoveTowards(follower.position, points[curFollowPoint], Time.deltaTime * speed);
+            if (Vector3.Distance(follower.position, points[curFollowPoint]) < 0.3f)
             {
-                curFollowPoint++;
+                if (curFollowPoint < points.Count - 1)
+                {
+                    curFollowPoint++;
+                }
+                else
+                {
+                    curFollowPoint = 0;
+                    totalTraveledDistance = 0;
+                    lastPos = points[0];
+                }
             }
-            else
+            if (Vector3.Distance(follower.position, lastPos) < Time.deltaTime * speed)
             {
-                curFollowPoint = 0;
-                totalTraveledDistance = 0;
-                lastPos = points[0];
+                i--;
             }
         }
     }
