@@ -26,9 +26,9 @@ public class WayPointRotate : MonoBehaviour
 
     void SetRotation()
     {
-        toRotate.eulerAngles = Vector3.zero;
-        toRotate.Rotate(0, roundPercent * 3.6f * rotationsPerRound, 0);
+        toRotate.rotation = new Quaternion(0,0,0,1);
         toRotate.Rotate(toRotate.InverseTransformDirection(angleOffset.x, 0, angleOffset.y));
+        toRotate.Rotate(0, roundPercent * 3.6f * rotationsPerRound, 0);
     }
 
     void GetPercent()
