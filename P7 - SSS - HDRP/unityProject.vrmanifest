@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.p7ssshdrp.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Thimo\\Github\\P7-SolarSystem\\P7 - SSS - HDRP\\actions.json",
+      "action_manifest_path": "C:\\Users\\Gebruiker\\Documents\\GitHub\\2A-P7-SSS\\P7-SolarSystem\\P7 - SSS - HDRP\\actions.json",
       "strings": {
         "en_us": {
           "name": "P7 - SSS - HDRP [Testing]"
