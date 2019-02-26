@@ -14,39 +14,71 @@ public class InfoPanelManager : MonoBehaviour
         {
             g.SetActive(false);
         }
-        panelTracker.GetComponent<InfoPanel>().uiElement = panels[0].transform;
-        panels[0].SetActive(true);
+        panelTracker.GetComponent<InfoPanel>().uiElement = panels[1].transform;
+        panels[1].SetActive(true);
     }
 
     public void SwitchPanel(int i)
     {
-        count += i;
-        foreach (GameObject g in panels)
+        if (i != 0 && i != 2)
         {
-            g.SetActive(false);
+            count += i;
+            foreach (GameObject g in panels)
+            {
+                g.SetActive(false);
+            }
         }
+
         if (count > panels.Count - 1)
         {
-            count = 1;
+            count = 2;
         }
-        if (count < 1)
+        if (count < 2)
         {
             count = panels.Count - 1;
         }
-        if (i == 0)
+
+        if (i == 0 || i == 2)
         {
-            if (panels[i].active == true)
+            if (i == 0)
             {
-                panelTracker.GetComponent<InfoPanel>().uiElement = panels[count].transform;
-                panels[count].SetActive(true);
-                panels[i].SetActive(false);
+                if (panels[i].activeInHierarchy)
+                {
+                    panelTracker.GetComponent<InfoPanel>().uiElement = panels[count].transform;
+                    panels[count].SetActive(true);
+                    panels[i].SetActive(false);
+                }
+                else
+                {
+                    foreach (GameObject g in panels)
+                    {
+                        g.SetActive(false);
+                    }
+                    panelTracker.GetComponent<InfoPanel>().uiElement = panels[i].transform;
+                    panels[i].SetActive(true);
+                }
             }
-            else
+
+            if (i == 2)
             {
-                panelTracker.GetComponent<InfoPanel>().uiElement = panels[i].transform;
-                panels[i].SetActive(true);
+                if (panels[1].activeInHierarchy)
+                {
+                    panelTracker.GetComponent<InfoPanel>().uiElement = panels[count].transform;
+                    panels[count].SetActive(true);
+                    panels[1].SetActive(false);
+                }
+                else
+                {
+                    foreach (GameObject g in panels)
+                    {
+                        g.SetActive(false);
+                    }
+                    panelTracker.GetComponent<InfoPanel>().uiElement = panels[1].transform;
+                    panels[1].SetActive(true);
+                }
             }
         }
+
         else
         {
             panelTracker.GetComponent<InfoPanel>().uiElement = panels[count].transform;

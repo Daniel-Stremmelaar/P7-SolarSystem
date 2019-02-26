@@ -34,7 +34,7 @@ public class MenuController : VRController
 
         if (trackPad.GetAxis(inputSource) != new Vector2 (0,0))
         {
-            print(trackPad.GetAxis(inputSource));
+            //print(trackPad.GetAxis(inputSource));
         }
 
         if(trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
@@ -52,12 +52,11 @@ public class MenuController : VRController
         if(trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
         {
             panelManager.SwitchPanel(0);
-            /*systemMap.active = !systemMap.active;
-            mapOffset = player.transform.forward * mapDistance;
-            mapOffset.y = player.transform.position.y;
-            systemMap.transform.position = player.transform.position + mapOffset;
-            systemMap.transform.rotation = player.transform.rotation;
-            systemMap.transform.eulerAngles.Set(0, player.transform.eulerAngles.y, player.transform.eulerAngles.z);*/
+        }
+
+        if(trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
+        {
+            panelManager.SwitchPanel(2);
         }
 
     }
