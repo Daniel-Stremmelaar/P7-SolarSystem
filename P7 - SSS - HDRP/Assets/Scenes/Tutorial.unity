@@ -482,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f35fa249b5008c44ac2998be6f82d4d, type: 3}
---- !u!21 &606532822
+--- !u!21 &625361915
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -739,7 +739,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!43 &1148078583
+--- !u!43 &1128347828
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1303,27 +1303,13 @@ GameObject:
   - component: {fileID: 1794744215}
   - component: {fileID: 1794744214}
   - component: {fileID: 1794744213}
-  - component: {fileID: 1794744212}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PutOnHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1794744212
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794744211}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1794744213
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1441,11 +1427,11 @@ PrefabInstance:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 606532822}
+      objectReference: {fileID: 625361915}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1148078583}
+      objectReference: {fileID: 1128347828}
     - target: {fileID: 166496505, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: panelManager
       value: 
@@ -1462,14 +1448,10 @@ PrefabInstance:
       propertyPath: uiElement
       value: 
       objectReference: {fileID: 62280542}
-    - target: {fileID: 11417306, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: shader
+    - target: {fileID: 660555379, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
+      propertyPath: putOnHit
       value: 
-      objectReference: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-    - target: {fileID: 11417168, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
-      propertyPath: shader
-      value: 
-      objectReference: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
+      objectReference: {fileID: 1794744211}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
 --- !u!1 &2053917022
@@ -1487,7 +1469,7 @@ GameObject:
   - component: {fileID: 2053917023}
   m_Layer: 0
   m_Name: Orb
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
