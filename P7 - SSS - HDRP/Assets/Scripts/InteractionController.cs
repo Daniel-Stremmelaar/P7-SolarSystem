@@ -8,6 +8,8 @@ public class InteractionController : VRController
 {
     [Header("Interaction")]
     //public GameObject interactText;
+    public Transform pointer;
+    
     public int interactionRange;
     private RaycastHit hit;
     public LineRenderer line;
@@ -16,18 +18,22 @@ public class InteractionController : VRController
     // Start is called before the first frame update
     void Start()
     {
-        positions[0] = transform.position;
+        positions[0] = pointer.position;
         line.SetPosition(0, positions[0]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        positions[1] = transform.position + (transform.forward * interactionRange);
-        line.SetPosition(1, positions[1]);
-        Debug.DrawRay(transform.position, transform.forward * interactionRange);
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
+        positions[0] = pointer.position;
+        line.SetPosition(0, positions[0]);
+
+        positions[1] = pointer.position + (pointer.forward * interactionRange);
+        line.SetPosition(1, positions[1]);
+        Debug.DrawRay(pointer.position, pointer.forward * interactionRange);
+
+        if (Physics.Raycast(pointer.position, pointer.forward, out hit, interactionRange))
         {
             print("hit");
             if(hit.transform.gameObject.tag == "Interactable")
