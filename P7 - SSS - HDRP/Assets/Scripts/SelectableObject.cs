@@ -7,8 +7,13 @@ public class SelectableObject : MonoBehaviour
     public Transform uiElement;
     public Vector3 uiElementOffset;
 
-    void Update()
+    public void PlaceText()
     {
         uiElement.transform.position = transform.position + uiElementOffset;
+    }
+
+    public void Interact()
+    {
+
     }
 }

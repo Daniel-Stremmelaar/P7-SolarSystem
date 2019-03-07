@@ -9,9 +9,8 @@ public class InteractionController : VRController
     [Header("Interaction")]
     //public GameObject interactText;
     public Transform pointer;
-
     public GameObject putOnHit;
-    
+    public GameObject interactText;
     public int interactionRange;
     private RaycastHit hit;
     public LineRenderer line;
@@ -47,31 +46,24 @@ public class InteractionController : VRController
             {
                 print("find");
 
-
-                /*if (interactText.activeSelf == false)
-                {
-                    interactText.SetActive(true);
-                }*/
+                hit.transform.gameObject.GetComponent<SelectableObject>().uiElement = interactText.transform;
+                hit.transform.gameObject.GetComponent<SelectableObject>().PlaceText();
+                interactText.SetActive(true);
 
                 if (trigger.GetStateDown(inputSource))
                 {
                     //Get InteractableObject script
-                    hit.transform.GetComponent<InteractableObject>().Interact();
                     print("activate");
                 }
             }
-        } else
+        }
+        else
         {
+            interactText.SetActive(false);
             positions[1] = pointer.position + (pointer.forward * interactionRange);
             putOnHit.SetActive(false);
         }
 
         line.SetPosition(1, positions[1]);
-        /*
-        else if (interactText.activeSelf == true)
-        {
-            interactText.SetActive(false);
-        }
-        */
     }
 }
