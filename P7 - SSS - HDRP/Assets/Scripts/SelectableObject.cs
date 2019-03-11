@@ -12,7 +12,7 @@ public class SelectableObject : MonoBehaviour
         uiElement.transform.position = transform.position + uiElementOffset;
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
 
     }

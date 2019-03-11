@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Valve.VR;
 
-public class TutorialOrb : InteractableObject
+public class TutorialOrb : SelectableObject
 {
     public GameObject[] slides;
     public Task[] tasks;
