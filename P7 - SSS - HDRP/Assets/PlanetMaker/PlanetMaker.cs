@@ -117,7 +117,7 @@ public class PlanetMaker : MonoBehaviour {
         float cloudScale = planetSize + cloudHeight;
         cloudsObject.transform.localScale = new Vector3(cloudScale, cloudScale, cloudScale);
 
-        cMat.SetColor("_Color", cloudColor);
+        cMat.SetColor("_CloudColor", cloudColor);
         cMat.SetTexture("_Alpha", cloudAlpha);
     }
 
