@@ -25,6 +25,7 @@ public class PlanetMaker : MonoBehaviour {
 
     [Header("Clouds")]
     public Texture2D cloudAlpha;
+    [ColorUsage(true, true)]
     public Color cloudColor;
     [Space]
     [Tooltip("Degrees per second")]

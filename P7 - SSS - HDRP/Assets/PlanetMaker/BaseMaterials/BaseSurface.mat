@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: BaseSurface
   m_Shader: {fileID: 4800000, guid: 57e16952b0b31e94bb48e13e585cbdf6, type: 3}
   m_ShaderKeywords: 
@@ -19,19 +20,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 9644eb6aca67672449e2bcbb0eab8e84, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f1d37c615b7ca84d97dd4cb29af40ca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9ac16193f7660634aa1b90ee3b614f12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
-        m_Texture: {fileID: 2800000, guid: 7dcdb143feb46fd49a261d74ec7b4dc3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8c365f66132346949acb80af6d13aefa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _NormalStrength: 1
-    - _SpecularIntensity: 0
+    - _SpecularIntensity: 1
     m_Colors:
-    - _SpecularColor: {r: 0.6745283, g: 0.91684794, b: 1, a: 1}
+    - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
