@@ -11,14 +11,15 @@ public class PlanetButton : SelectableObject
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        /*foreach(GameObject g in GameObject.FindGameObjectsWithTag("Planet"))
-        {
-            planets.Add(g);
-        }*/
     }
 
     public override void Interact()
     {
+        foreach (GameObject g in planets)
+        {
+            g.SetActive(false);
+        }
         player.transform.position = planets[number].GetComponent<Planet>().position;
+        planets[number].SetActive(true);
     }
 }
