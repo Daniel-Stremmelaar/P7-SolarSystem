@@ -9,13 +9,16 @@ public class MenuController : VRController
     public SteamVR_Action_Vector2 trackPad;
     public SteamVR_Action_Boolean trackPress;
 
+    [Header ("Data")]
     public InfoPanelManager panelManager;
     public GameObject player;
     public GameObject systemMap;
     public int mapDistance;
     private Vector3 mapOffset;
-
     public GameObject UIPanel;
+
+    [Header("Planets")]
+    public List<GameObject> planets = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {

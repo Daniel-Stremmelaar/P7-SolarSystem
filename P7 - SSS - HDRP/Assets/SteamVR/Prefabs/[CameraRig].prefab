@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 458974}
   - component: {fileID: 114000010876603736}
-  - component: {fileID: 166496505}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -30,7 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482514}
-  - {fileID: 815951205}
   m_Father: {fileID: 420908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,33 +75,6 @@ MonoBehaviour:
     m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
---- !u!114 &166496505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1967fa3e7c32ef488c4b16cf475c18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger:
-    actionPath: /actions/default/in/InteractUI
-    needsReinit: 0
-  inputSource: 1
-  trackPad:
-    actionPath: /actions/default/in/trackpad
-    needsReinit: 0
-  trackPress:
-    actionPath: /actions/default/in/Teleport
-    needsReinit: 0
-  panelManager: {fileID: 0}
-  player: {fileID: 1000014254142504}
-  systemMap: {fileID: 0}
-  mapDistance: 5
-  UIPanel: {fileID: 0}
 --- !u!1 &146900
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +342,8 @@ MonoBehaviour:
     needsReinit: 0
   inputSource: 2
   pointer: {fileID: 898403629}
+  putOnHit: {fileID: 0}
+  interactText: {fileID: 0}
   interactionRange: 50
   line: {fileID: 898403630}
   positions:
@@ -881,51 +854,6 @@ Transform:
   m_Father: {fileID: 2051003877}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &815951204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 815951205}
-  - component: {fileID: 815951206}
-  m_Layer: 0
-  m_Name: PanelTracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &815951205
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815951204}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.023, z: 0.069}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 458974}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &815951206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815951204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6ff0025312d14498b149c13a12fa02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiElement: {fileID: 0}
-  uiElementOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &898403628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,11 +1623,16 @@ MonoBehaviour:
     enableTransparentPostpass: 1
     enableDistortion: 1
     enablePostprocess: 1
-    enableAsyncCompute: 1
     enableOpaqueObjects: 1
     enableTransparentObjects: 1
     enableRealtimePlanarReflection: 1
     enableMSAA: 0
+    enableAsyncCompute: 1
+    runLightListAsync: 1
+    runSSRAsync: 1
+    runSSAOAsync: 1
+    runContactShadowsAsync: 1
+    runVolumeVoxelizationAsync: 1
     lightLoopSettings:
       overrides: 0
       enableTileAndCluster: 1

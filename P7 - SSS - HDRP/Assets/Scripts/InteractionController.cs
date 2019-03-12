@@ -53,8 +53,8 @@ public class InteractionController : VRController
                 if (trigger.GetStateDown(inputSource))
                 {
                     //Get InteractableObject script
-                    hit.transform.gameObject.GetComponent<SelectableObject>().Interact();
                     print("activate");
+                    hit.transform.gameObject.GetComponent<SelectableObject>().Interact();
                 }
             }
         }
