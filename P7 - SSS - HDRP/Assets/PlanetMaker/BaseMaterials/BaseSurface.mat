@@ -20,15 +20,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 69ebf56e242eedf48ae9f49acefc8f3b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d93a9213424d70348beae4325ae0c255, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 37be7b497d7c13141a47f82252259dd4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9b197eac98d2b4b46a2f180c4cae4a1b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularMap:
-        m_Texture: {fileID: 2800000, guid: 387b2d3e0348d9a46b05e9f822f0529d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 74c54f645a2adb047a546adb80787e4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
