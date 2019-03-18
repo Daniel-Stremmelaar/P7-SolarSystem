@@ -33,8 +33,6 @@ public class WayPointRotate : MonoBehaviour
 
     void GetPercent()
     {
-        roundPercent = wayPoint.totalTraveledDistance;
-        roundPercent /= wayPoint.lineLength;
-        roundPercent *= 100;
+        roundPercent = wayPoint.currentPercent;
     }
 }

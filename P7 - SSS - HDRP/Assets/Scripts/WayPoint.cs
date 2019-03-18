@@ -7,82 +7,38 @@ public class WayPoint : MonoBehaviour
 {
 
     LineRenderer line;
-    [SerializeField]
-    List<Vector3> points = new List<Vector3>();
-    [HideInInspector] public int curFollowPoint = 0;
     [SerializeField] Transform toMove;
     [SerializeField] float speed = 10;
     int lastPointCount = 0;
-    Vector3 lastPos = Vector3.zero;
-    [HideInInspector] public float totalTraveledDistance = 0;
     [HideInInspector] public float lineLength = 0;
+     [Range(0, 100)] public float currentPercent = 50;
 
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        SetPoints();
-        toMove.position = points[0];
-        lastPos = toMove.position;
+        toMove.position = line.GetPosition(0);
         lineLength = TotalLineLength();
     }
 
     void Update()
     {
-        // SetPoints();
-        CheckPoints();
-        lastPos = toMove.position;
-        Follow(toMove);
-        totalTraveledDistance += Vector3.Distance(toMove.position, lastPos);
+        SetPosToPercent();
+        Move();
     }
 
-    void CheckPoints()
+    void SetPosToPercent()
     {
-        if (line.positionCount != lastPointCount)
-        {
-            SetPoints();
-            lineLength = TotalLineLength();
-        }
-        lastPointCount = line.positionCount;
-    }
-
-    void Follow(Transform follower)
-    {
-        Vector3 lastPos = follower.position;
-        for (int i = 0; i < 1; i++)
-        {
-            follower.position = Vector3.MoveTowards(follower.position, points[curFollowPoint], Time.deltaTime * speed);
-            if (Vector3.Distance(follower.position, points[curFollowPoint]) < 0.3f)
-            {
-                if (curFollowPoint < points.Count - 1)
-                {
-                    curFollowPoint++;
-                }
-                else
-                {
-                    curFollowPoint = 0;
-                    totalTraveledDistance = 0;
-                    lastPos = points[0];
-                }
-            }
-            if (Vector3.Distance(follower.position, lastPos) < Time.deltaTime * speed)
-            {
-                i--;
-            }
-        }
-    }
-
-    void SetPoints()
-    {
-        if (line == null)
-        {
-            line = GetComponent<LineRenderer>();
-        }
-        points.Clear();
+        List<Vector3> linePositions = new List<Vector3>();
         for (int i = 0; i < line.positionCount; i++)
         {
-            //  points.Add(transform.GetChild(i).transform.position);
-            points.Add(line.GetPosition(i));
+            linePositions.Add(line.GetPosition(i));
         }
+        toMove.position = FindPoint(linePositions.ToArray(), TotalLineLength(), (currentPercent / 100));
+    }
+
+    void Move()
+    {
+        currentPercent = Mathf.Repeat(currentPercent + Time.deltaTime * speed,100);
     }
 
     float TotalLineLength()
@@ -93,5 +49,36 @@ public class WayPoint : MonoBehaviour
             toReturn += Vector3.Distance(line.GetPosition(i - 1), line.GetPosition(i));
         }
         return toReturn;
+    }
+
+    Vector3 FindPoint(Vector3[] vectors, float length, float p)
+    {
+        if (vectors.Length < 1)
+        {
+            return Vector3.zero;
+        }
+        else if (vectors.Length < 2)
+        {
+            return vectors[0];
+        }
+
+        float dist = length * Mathf.Clamp(p, 0, 1);
+        Vector3 pos = vectors[0];
+
+        for (int i = 0; i < vectors.Length - 1; i++)
+        {
+            Vector3 v0 = vectors[i];
+            Vector3 v1 = vectors[i + 1];
+            float this_dist = (v1 - v0).magnitude;
+
+            if (this_dist < dist)
+            {
+                dist -= this_dist;
+                continue;
+            }
+
+            return Vector3.Lerp(v0, v1, dist / this_dist);
+        }
+        return vectors[vectors.Length - 1];
     }
 }
