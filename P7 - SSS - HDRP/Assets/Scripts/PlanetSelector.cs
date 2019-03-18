@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlanetSelector : SelectableObject
 {
+    [Header("Mechanical")]
+    public Text planetName;
     public PlanetButton travel;
     public int change;
 
@@ -19,6 +21,10 @@ public class PlanetSelector : SelectableObject
         {
             travel.number = 0;
         }
-        travel.gameObject.GetComponentInChildren<Text>().text = travel.planets[travel.number].name;
+        planetName.text = travel.planets[travel.number].name;
+        if(travel.images[travel.number] != null)
+        {
+            travel.gameObject.GetComponent<Image>().sprite = travel.images[travel.number];
+        }
     }
 }

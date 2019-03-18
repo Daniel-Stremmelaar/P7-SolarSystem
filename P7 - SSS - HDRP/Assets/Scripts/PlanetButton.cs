@@ -7,6 +7,7 @@ public class PlanetButton : SelectableObject
     public List<GameObject> planets = new List<GameObject>();
     public int number;
     private GameObject player;
+    public List<Sprite> images = new List<Sprite>();
 
     private void Start()
     {
