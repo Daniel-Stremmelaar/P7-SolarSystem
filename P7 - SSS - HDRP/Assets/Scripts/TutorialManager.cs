@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 positionToBeginTutorial;
+    public Transform cameraRig;
+
+
+    public void StartTutorial()
+    {
+
+    }
+
+    //Spawn the player in front of the Earth
+    public void TeleportPlayer()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    //Proceed if you press the said controls
+    public IEnumerator CheckControls()
     {
-        
+        yield return null;
+
+    }
+
+    //Proceed if you go to Earth
+    public void CheckForTravelToEarth()
+    {
+
+    }
+
+    //Proceed if you travel to a different planet
+    public void CheckForTravelToPlanet()
+    {
+
+    }
+
+    //Finish
+    public void FinishTutorial()
+    { 
+
     }
 }
