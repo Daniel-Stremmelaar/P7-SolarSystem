@@ -23,6 +23,8 @@ public class SingleController : VRController
     public int currentList;
     public GameObject player;
     public Lister moonList;
+    public GameObject activePlanet;
+    public float upScale;
     //public List<Sprite> images = new List<Sprite>();
 
     [Header("Objects")]
@@ -53,26 +55,22 @@ public class SingleController : VRController
 
         if (activeMenu == true)
         {
+            // Control scheme 1: travel
             if (trigger.GetStateDown(inputSource))
             {
                 print("travel to planet");
-                if( number != currentPlanet || listNr != currentList )
-                {
-                    Travel();
-                }
-                else
+                if( number == currentPlanet && listNr == currentList )
                 {
                     print("to surface");
                     SceneManager.LoadScene(lists[listNr].objects[number].surface);
                 }
+                else
+                {
+                    Travel();
+                }
             }
 
             //trackpad axis: horizontal left number, vertical right number. Left/down = -1, right/up = 1
-
-            if (trackPad.GetAxis(inputSource) != new Vector2(0, 0))
-            {
-                //print(trackPad.GetAxis(inputSource));
-            }
 
             if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
             {
@@ -99,6 +97,20 @@ public class SingleController : VRController
             }
         }
 
+        else
+        {
+            // Control scheme 2: zoom
+            if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
+            {
+                activePlanet.gameObject.transform.localScale *= upScale;
+            }
+
+            if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
+            {
+                activePlanet.gameObject.transform.localScale /= upScale;
+            }
+        }
+
     }
 
     private void Travel()
@@ -117,9 +129,12 @@ public class SingleController : VRController
             moonList.objects = lists[0].objects[currentPlanet].moons;
             moonList.image = lists[0].objects[currentPlanet].images;
         }
-        player.transform.position = lists[listNr].objects[number].GetComponent<Planet>().position;
-        lists[listNr].objects[number].gameObject.SetActive(true);
-        
+        activePlanet = lists[listNr].objects[number].gameObject;
+        activePlanet.transform.localScale = new Vector3(1, 1, 1);
+        player.transform.position = activePlanet.GetComponent<Planet>().position;
+        activePlanet.SetActive(true);
+
+
     }
 
     private void Select(int change)
