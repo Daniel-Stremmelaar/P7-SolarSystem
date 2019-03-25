@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New List", menuName = "List Data")]
-public class Lister : ScriptableObject
+public class Lister : MonoBehaviour
 {
-    public List<GameObject> objects = new List<GameObject>();
+    public List<Planet> objects = new List<Planet>();
     public List<Sprite> image = new List<Sprite>();
 }

@@ -15,14 +15,16 @@ public class SingleController : VRController
     public GameObject UIPanel;
     public bool activeMenu;
 
-    [Header("Planets")]
-    public List<GameObject> planets = new List<GameObject>();
+    [Header("Data")]
+    //public List<GameObject> planets = new List<GameObject>();
     public int number;
     public int currentPlanet;
+    public int listNr;
     public GameObject player;
-    public List<Sprite> images = new List<Sprite>();
+    public Lister moonList;
+    //public List<Sprite> images = new List<Sprite>();
 
-    [Header("Subsystems")]
+    [Header("Objects")]
     public List<Lister> lists = new List<Lister>();
 
     [Header("UI")]
@@ -31,8 +33,11 @@ public class SingleController : VRController
 
     void Start()
     {
+        listNr = 0;
         number = 0;
+        currentPlanet = -1;
         Select(0);
+        Travel();
         activeMenu = true;
         UIPanel.SetActive(activeMenu);
     }
@@ -57,9 +62,9 @@ public class SingleController : VRController
                 else
                 {
                     print("to surface");
-                    if (planets[number].scene != null)
+                    if (lists[listNr].objects[number].surface != null)
                     {
-                        SceneManager.LoadScene(planets[number].scene.buildIndex);
+                        SceneManager.LoadScene(lists[listNr].objects[number].surface.buildIndex);
                     }
                 }
             }
@@ -85,12 +90,14 @@ public class SingleController : VRController
 
             if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
             {
-                print("to surface");
+                print("list count +1");
+                Browse(1);
             }
 
             if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
             {
-                print("to galaxy map");
+                print("list count -1");
+                Browse(-1);
             }
         }
 
@@ -98,12 +105,22 @@ public class SingleController : VRController
 
     private void Travel()
     {
-        foreach (GameObject g in planets)
+        foreach (Lister g in lists)
         {
-            g.SetActive(false);
+            foreach(Planet p in g.objects)
+            {
+                p.gameObject.SetActive(false);
+            }
         }
-        player.transform.position = planets[number].GetComponent<Planet>().position;
-        planets[number].SetActive(true);
+        currentPlanet = number;
+        if(listNr == 0)
+        {
+            moonList.objects = lists[0].objects[currentPlanet].moons;
+            moonList.image = lists[0].objects[currentPlanet].images;
+        }
+        player.transform.position = lists[listNr].objects[number].GetComponent<Planet>().position;
+        lists[listNr].objects[number].gameObject.SetActive(true);
+        
     }
 
     private void Select(int change)
@@ -111,16 +128,56 @@ public class SingleController : VRController
         number += change;
         if (number < 0)
         {
-            number = planets.Count - 1;
+            number = lists[listNr].objects.Count - 1;
         }
-        if (number > planets.Count - 1)
+        if (number > lists[listNr].objects.Count - 1)
         {
             number = 0;
         }
-        planetName.text = planets[number].name;
-        if (images[number] != null)
+        planetName.text = lists[listNr].objects[number].name;
+        if (lists[listNr].image[number] != null)
         {
-            planetSprite.sprite = images[number];
+            planetSprite.sprite = lists[listNr].image[number];
         }
+    }
+
+    private void Browse(int change)
+    {
+        listNr += change;
+        if(listNr < 0)
+        {
+            listNr = lists.Count - 1;
+        }
+        if(listNr > lists.Count - 1)
+        {
+            listNr = 0;
+        }
+
+        if(lists[listNr].objects.Count > 0)
+        {
+            if(listNr == 0)
+            {
+                number = currentPlanet;
+            }
+            else
+            {
+                number = 0;
+            }
+            Select(0);
+        }
+        else
+        {
+            listNr -= change;
+            if (listNr < 0)
+            {
+                listNr = lists.Count - 1;
+            }
+            if (listNr > lists.Count - 1)
+            {
+                listNr = 0;
+            }
+        }
+
+        
     }
 }
