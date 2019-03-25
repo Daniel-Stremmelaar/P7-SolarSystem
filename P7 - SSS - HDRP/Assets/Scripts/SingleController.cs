@@ -60,7 +60,7 @@ public class SingleController : VRController
                 {
                     Travel();
                 }
-                else if( currentList == lists[listNr].objects[number].type )
+                else
                 {
                     print("to surface");
                     if (lists[listNr].objects[number].surface != null)
