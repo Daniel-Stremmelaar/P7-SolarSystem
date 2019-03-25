@@ -63,10 +63,14 @@ public class SingleController : VRController
                 if( number == currentPlanet && listNr == currentList )
                 {
                     print("to surface");
-                    SceneManager.LoadScene(lists[listNr].objects[number].surface);
+                    if(SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
+                    {
+                        SceneManager.LoadScene(lists[listNr].objects[number].surface);
+                    }
                 }
                 else
                 {
+                    print("travel");
                     Travel();
                 }
             }
