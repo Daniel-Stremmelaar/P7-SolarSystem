@@ -10,6 +10,7 @@ public class Planet : MonoBehaviour
     public List<Sprite> images = new List<Sprite>();
     public Vector3 position;
     public Vector3 rotation;
+    public int type;
 
     private void Update()
     {

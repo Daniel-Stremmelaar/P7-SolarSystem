@@ -20,6 +20,7 @@ public class SingleController : VRController
     public int number;
     public int currentPlanet;
     public int listNr;
+    public int currentList;
     public GameObject player;
     public Lister moonList;
     //public List<Sprite> images = new List<Sprite>();
@@ -55,11 +56,11 @@ public class SingleController : VRController
             if (trigger.GetStateDown(inputSource))
             {
                 print("travel to planet");
-                if( number != currentPlanet)
+                if( number != currentPlanet || listNr != currentList )
                 {
                     Travel();
                 }
-                else
+                else if( currentList == lists[listNr].objects[number].type )
                 {
                     print("to surface");
                     if (lists[listNr].objects[number].surface != null)
@@ -113,6 +114,7 @@ public class SingleController : VRController
             }
         }
         currentPlanet = number;
+        currentList = listNr;
         if(listNr == 0)
         {
             moonList.objects = lists[0].objects[currentPlanet].moons;
