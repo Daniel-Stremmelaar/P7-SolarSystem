@@ -25,6 +25,7 @@ public class SingleController : VRController
     public Lister moonList;
     public GameObject activePlanet;
     public float upScale;
+    public Lister heavenBodies;
     //public List<Sprite> images = new List<Sprite>();
 
     [Header("Objects")]
@@ -115,12 +116,9 @@ public class SingleController : VRController
 
     private void Travel()
     {
-        foreach (Lister g in lists)
+        foreach (Planet g in heavenBodies.objects)
         {
-            foreach(Planet p in g.objects)
-            {
-                p.gameObject.SetActive(false);
-            }
+            g.gameObject.SetActive(false);
         }
         currentPlanet = number;
         currentList = listNr;
