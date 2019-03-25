@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Planet : MonoBehaviour
 {
-    public Scene surface;
+    public int surface;
     public List<Planet> moons = new List<Planet>();
     public List<Sprite> images = new List<Sprite>();
     public Vector3 position;

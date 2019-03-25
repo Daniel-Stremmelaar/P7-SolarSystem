@@ -63,10 +63,7 @@ public class SingleController : VRController
                 else
                 {
                     print("to surface");
-                    if (lists[listNr].objects[number].surface != null)
-                    {
-                        SceneManager.LoadScene(lists[listNr].objects[number].surface.buildIndex);
-                    }
+                    SceneManager.LoadScene(lists[listNr].objects[number].surface);
                 }
             }
 
