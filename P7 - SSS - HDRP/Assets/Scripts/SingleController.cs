@@ -146,8 +146,6 @@ public class SingleController : VRController
         Time.timeScale = 1;
         player.transform.position = activePlanet.GetComponent<Planet>().position;
         activePlanet.SetActive(true);
-
-
     }
 
     private void Select(int change)
