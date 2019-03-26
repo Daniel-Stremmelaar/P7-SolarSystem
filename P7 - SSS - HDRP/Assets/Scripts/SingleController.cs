@@ -114,6 +114,16 @@ public class SingleController : VRController
             {
                 activePlanet.gameObject.transform.localScale /= upScale;
             }
+
+            if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
+            {
+                Time.timeScale *= upScale;
+            }
+
+            if (trackPad.GetAxis(inputSource).x < -0.7 && trackPress.GetStateDown(inputSource))
+            {
+                Time.timeScale /= upScale;
+            }
         }
 
     }
@@ -133,6 +143,7 @@ public class SingleController : VRController
         }
         activePlanet = lists[listNr].objects[number].gameObject;
         activePlanet.transform.localScale = new Vector3(1, 1, 1);
+        Time.timeScale = 1;
         player.transform.position = activePlanet.GetComponent<Planet>().position;
         activePlanet.SetActive(true);
 
