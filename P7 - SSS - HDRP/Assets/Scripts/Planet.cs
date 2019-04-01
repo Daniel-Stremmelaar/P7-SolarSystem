@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Planet : MonoBehaviour
 {
+    [Header("Data")]
     public int surface;
     public List<Planet> moons = new List<Planet>();
     public List<Sprite> images = new List<Sprite>();
     public Vector3 position;
     public Vector3 rotation;
+
+    [Header("Info")]
+    [TextArea] public string panel1Info;
+    [TextArea] public string panel2Info;
+    public GameObject info1;
+    public GameObject info2;
 
     private void Update()
     {
