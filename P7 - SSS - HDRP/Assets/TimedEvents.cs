@@ -5,19 +5,29 @@ using UnityEngine.Events;
 
 public class TimedEvents : MonoBehaviour
 {
-    
-    [SerializeField] EventArray[] events;
 
-    public void StartEvents(){
-        float totalTime = 0;
-        for (int i = 0; i < events.Length; i++)
+    [SerializeField] EventArray[] events;
+    [SerializeField] bool stopCoroutines = false;
+
+    public void StartEvents()
+    {
+        if (Time.time != 0)
         {
-            StartCoroutine(ActivateEvent(events[i].curEvent,events[i].waitTime + totalTime));
-            totalTime += events[i].waitTime;
+            if (stopCoroutines == true)
+            {
+                StopAllCoroutines();
+            }
+            float totalTime = 0;
+            for (int i = 0; i < events.Length; i++)
+            {
+                StartCoroutine(ActivateEvent(events[i].curEvent, events[i].waitTime + totalTime));
+                totalTime += events[i].waitTime;
+            }
         }
     }
 
-    IEnumerator ActivateEvent(UnityEvent ev,float waitTime){
+    IEnumerator ActivateEvent(UnityEvent ev, float waitTime)
+    {
         yield return new WaitForSeconds(waitTime);
         ev.Invoke();
     }

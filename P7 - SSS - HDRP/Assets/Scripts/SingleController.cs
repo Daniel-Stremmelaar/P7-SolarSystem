@@ -35,6 +35,10 @@ public class SingleController : VRController
     public Text planetName;
     public Image planetSprite;
 
+    //By Casper
+    [Header("Event")]
+    [SerializeField] TimedEvents ev;
+
     void Start()
     {
         listNr = 0;
@@ -48,6 +52,13 @@ public class SingleController : VRController
 
     void Update()
     {
+
+        //delete later
+        if (Input.GetButtonDown("Fire1") == true)
+        {
+            // ev.StartEvents();
+        }
+
         if (menu.GetStateDown(inputSource))
         {
             activeMenu = !activeMenu;
@@ -60,10 +71,10 @@ public class SingleController : VRController
             if (trigger.GetStateDown(inputSource))
             {
                 print("travel to planet");
-                if( number == currentPlanet && listNr == currentList )
+                if (number == currentPlanet && listNr == currentList)
                 {
                     print("to surface");
-                    if(SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
+                    if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
                     {
                         SceneManager.LoadScene(lists[listNr].objects[number].surface);
                     }
@@ -136,7 +147,7 @@ public class SingleController : VRController
         }
         currentPlanet = number;
         currentList = listNr;
-        if(listNr == 0)
+        if (listNr == 0)
         {
             moonList.objects = lists[0].objects[currentPlanet].moons;
             moonList.image = lists[0].objects[currentPlanet].images;
@@ -147,6 +158,11 @@ public class SingleController : VRController
         player.transform.position = activePlanet.GetComponent<Planet>().position;
         activePlanet.SetActive(true);
         //change panel to planet info
+        //ok ;) by Casper
+        if (ev != null)
+        {
+            ev.StartEvents();
+        }
     }
 
     private void Select(int change)
@@ -170,18 +186,18 @@ public class SingleController : VRController
     private void Browse(int change)
     {
         listNr += change;
-        if(listNr < 0)
+        if (listNr < 0)
         {
             listNr = lists.Count - 1;
         }
-        if(listNr > lists.Count - 1)
+        if (listNr > lists.Count - 1)
         {
             listNr = 0;
         }
 
-        if(lists[listNr].objects.Count > 0)
+        if (lists[listNr].objects.Count > 0)
         {
-            if(listNr == 0)
+            if (listNr == 0)
             {
                 number = currentPlanet;
             }
@@ -204,6 +220,6 @@ public class SingleController : VRController
             }
         }
 
-        
+
     }
 }
