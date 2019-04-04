@@ -21,6 +21,8 @@ public class SingleController : MonoBehaviour
     public GameObject activePlanet;
     public float upScale;
     public Lister heavenBodies;
+    public GameObject info1;
+    public GameObject info2;
 
     [Header("Objects")]
     public List<Lister> lists = new List<Lister>();
@@ -37,10 +39,6 @@ public class SingleController : MonoBehaviour
     public Button toggleTwo;
     public Button listChange;
     public Button exit;
-
-    //By Casper
-    [Header("Event")]
-    [SerializeField] TimedEvents ev;
 
     void Start()
     {
@@ -170,13 +168,10 @@ public class SingleController : MonoBehaviour
         {
             listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
         }
-        
-        //change panel to planet info
-        //ok ;) by Casper
-        if (ev != null)
-        {
-            ev.StartEvents();
-        }
+
+        info1.GetComponent<Text>().text = lists[currentList].objects[currentPlanet].panel1Info;
+        info2.GetComponent<Text>().text = lists[currentList].objects[currentPlanet].panel2Info;
+
     }
 
     private void Select(int change)

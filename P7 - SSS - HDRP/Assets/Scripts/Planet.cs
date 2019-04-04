@@ -15,8 +15,6 @@ public class Planet : MonoBehaviour
     [Header("Info")]
     [TextArea] public string panel1Info;
     [TextArea] public string panel2Info;
-    public GameObject info1;
-    public GameObject info2;
 
     private void Update()
     {
