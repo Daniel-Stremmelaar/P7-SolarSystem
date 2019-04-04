@@ -22,7 +22,7 @@ public class SingleController : MonoBehaviour
     public float upScale;
     public Lister heavenBodies;
     public GameObject info1;
-    public GameObject info2;
+    public TravelFlash flash;
 
     [Header("Objects")]
     public List<Lister> lists = new List<Lister>();
@@ -108,6 +108,7 @@ public class SingleController : MonoBehaviour
 
     private void Travel()
     {
+        flash.play = true;
         foreach (Planet g in heavenBodies.objects)
         {
             g.gameObject.SetActive(false);
@@ -158,7 +159,6 @@ public class SingleController : MonoBehaviour
         }
 
         info1.GetComponent<TextMeshProUGUI>().text = lists[currentList].objects[currentPlanet].panel1Info;
-        info2.GetComponent<TextMeshProUGUI>().text = lists[currentList].objects[currentPlanet].panel2Info;
 
     }
 
