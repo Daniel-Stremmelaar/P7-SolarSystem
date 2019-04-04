@@ -457,8 +457,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 83aacc6c40bc20444b4969934d682a0f, type: 3}
   position: {x: 0, y: 0, z: -0.5}
   rotation: {x: 0, y: 15.189874, z: 0}
-  panel1Info: Neptune info 1
-  panel2Info: Neptune info 2
+  panel1Info: 'MASS
+
+    1.024 * 10^26 KG
+
+
+    RADIUS
+
+    24,622 KM
+
+
+    ROTATION LENGTH
+
+    16 HOURS
+
+
+    SURFACE TEMP.
+
+    60 K'
+  panel2Info: 
 --- !u!1 &161942684
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,8 +544,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.02}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Titania info 1
-  panel2Info: Titania info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &169424311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,8 +803,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.05}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Ganymede info 1
-  panel2Info: Ganymede info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &181456462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,8 +902,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.02}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Rhea info 1
-  panel2Info: Rhea info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &235467282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,8 +1085,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.012}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Hyperion info 1
-  panel2Info: Hyperion info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &337239559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,8 +1290,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.05}
   rotation: {x: 0, y: 0.20477815, z: 0}
-  panel1Info: Mercury info 1
-  panel2Info: Mercury info 2
+  panel1Info: 'MASS
+
+    3.285 * 10^23 KG
+
+
+    RADIUS
+
+    2440 KM
+
+
+    ROTATION LENGTH
+
+    1407.5 HOURS
+
+
+    SURFACE TEMP.
+
+    750 K'
+  panel2Info: 
 --- !u!1 &501680225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,8 +1409,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.012}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Enceladus info 1
-  panel2Info: Enceladus info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &618901064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,8 +1828,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.015}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Tethys info 1
-  panel2Info: Tethys info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &668463469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2151,8 +2287,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.03}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Europa info 1
-  panel2Info: Europa info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &897531436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,8 +2770,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.12}
   rotation: {x: 0, y: 0.049792532, z: 0}
-  panel1Info: Venus info 1
-  panel2Info: Venus info 2
+  panel1Info: 'MASS
+
+    4.867 * 10^24 KG
+
+
+    RADIUS
+
+    6052 KM
+
+
+    ROTATION LENGTH
+
+    2802 HOURS
+
+
+    SURFACE TEMP.
+
+    735 K'
+  panel2Info: 
 --- !u!1 &1081149473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,8 +2929,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.075}
   rotation: {x: 0, y: 11.764706, z: 0}
-  panel1Info: Mars info 1
-  panel2Info: Mars info 2
+  panel1Info: 'MASS
+
+    6.39 * 10^23 KG
+
+
+    RADIUS
+
+    3,390 KM
+
+
+    ROTATION LENGTH
+
+    24.6 HOURS
+
+
+    SURFACE TEMP.
+
+    210 K'
+  panel2Info: 
 --- !u!1 &1098445067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1722736646659083059, guid: 26005acce88a52a4a8837709cf2afaba,
@@ -2786,8 +2973,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dfbb1ac108bbefd4c8dc3c3b6d35f24d, type: 3}
   position: {x: 0, y: 0, z: -0.02}
   rotation: {x: 0, y: 1.875, z: 0}
-  panel1Info: Pluto info 1
-  panel2Info: Pluto info 2
+  panel1Info: 'MASS
+
+    1.309 * 10^22 KG
+
+
+    RADIUS
+
+    1,188 KM
+
+
+    ROTATION LENGTH
+
+    153 HOURS
+
+
+    SURFACE TEMP.
+
+    43 K'
+  panel2Info: 
 --- !u!1 &1107352938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,8 +3027,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.025}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Triton info 1
-  panel2Info: Triton info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1107352940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,8 +3244,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.02}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Oberon info 1
-  panel2Info: Oberon info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1143525793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3273,8 +3511,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.04}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Io info 1
-  panel2Info: Io info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1281619084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,8 +4053,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.015}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Ariel info 1
-  panel2Info: Ariel info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1490952684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4212,8 +4484,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.05}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Titan info 1
-  panel2Info: Titan info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1646635629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,8 +4583,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.045}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Callisto info 1
-  panel2Info: Callisto info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1657388752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4376,8 +4682,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.015}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Dione info 1
-  panel2Info: Dione info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1703759309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4466,8 +4789,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4f8371a13bf34534aa02a40cc82ca01a, type: 3}
   position: {x: 0, y: 0, z: -2}
   rotation: {x: 0, y: 27.272728, z: 0}
-  panel1Info: Saturn info 1
-  panel2Info: Saturn info 2
+  panel1Info: 'MASS
+
+    5.683 * 10^26 KG
+
+
+    RADIUS
+
+    58,232 KM
+
+
+    ROTATION LENGTH
+
+    10.7 HOURS
+
+
+    SURFACE TEMP.
+
+    100 K'
+  panel2Info: 
 --- !u!1 &1731661743
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,8 +4843,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.015}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Umbirel info 1
-  panel2Info: Umbriel info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1731661745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,8 +5321,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.017}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Iapetus info 1
-  panel2Info: Iapetus info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &1850094576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5117,7 +5491,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec0771f21fe12f1419f708d111904b30, type: 3}
   position: {x: 0, y: 0, z: -0.5}
   rotation: {x: 0, y: 16, z: 0}
-  panel1Info: Uranus info 1
+  panel1Info: 'MASS
+
+    8.681 * 10^25 KG
+
+
+    RADIUS
+
+    25,362 KM
+
+
+    ROTATION LENGTH
+
+    17.2 HOURS
+
+
+    SURFACE TEMP.
+
+    50 K'
   panel2Info: Uranus info 2
 --- !u!1 &1910361468
 GameObject:
@@ -5741,8 +6132,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.02}
   rotation: {x: 0, y: 0, z: 0}
-  panel1Info: Charon info 1
-  panel2Info: Charon info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &2115102824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5823,8 +6231,25 @@ MonoBehaviour:
   images: []
   position: {x: 0, y: 0, z: -0.03}
   rotation: {x: 0, y: 0.44444445, z: 0}
-  panel1Info: Moon info 1
-  panel2Info: Moon info 2
+  panel1Info: 'MASS
+
+    7.3476 * 10^22 KG
+
+
+    RADIUS
+
+    1,737 KM
+
+
+    ROTATION LENGTH
+
+    655 HOURS
+
+
+    SURFACE TEMP.
+
+    200 K'
+  panel2Info: 
 --- !u!114 &2133692450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,12 +6468,29 @@ PrefabInstance:
     - target: {fileID: 6167191344283062672, guid: 2a061050f8f9ade4b8251de8b98d3452,
         type: 3}
       propertyPath: panel1Info
-      value: Jupiter info 1
+      value: 'MASS
+
+        1.898 * 10^27 KG
+
+
+        RADIUS
+
+        69,911 KM
+
+
+        ROTATION LENGTH
+
+        10 HOURS
+
+
+        SURFACE TEMP.
+
+        340 K'
       objectReference: {fileID: 0}
     - target: {fileID: 6167191344283062672, guid: 2a061050f8f9ade4b8251de8b98d3452,
         type: 3}
       propertyPath: panel2Info
-      value: Jupiter info 2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6167191344283062672, guid: 2a061050f8f9ade4b8251de8b98d3452,
         type: 3}
@@ -6247,12 +6689,29 @@ PrefabInstance:
     - target: {fileID: 6603005221160844672, guid: b281c4c0e8c9f3c40b85e3c90429cc0d,
         type: 3}
       propertyPath: panel1Info
-      value: Earth info 1
+      value: 'MASS
+
+        5.9736 * 10^24 KG
+
+
+        RADIUS
+
+        6371 KM
+
+
+        ROTATION LENGTH
+
+        24 HOURS
+
+
+        SURFACE TEMP.
+
+        288 K'
       objectReference: {fileID: 0}
     - target: {fileID: 6603005221160844672, guid: b281c4c0e8c9f3c40b85e3c90429cc0d,
         type: 3}
       propertyPath: panel2Info
-      value: Earth info 2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6603005221160844672, guid: b281c4c0e8c9f3c40b85e3c90429cc0d,
         type: 3}
@@ -6593,12 +7052,29 @@ PrefabInstance:
     - target: {fileID: 3199620748848143013, guid: eeca5d28de6a17940948cb7cd3f9afc8,
         type: 3}
       propertyPath: panel1Info
-      value: Sun info 1
+      value: 'MASS
+
+        1.989 * 10^30 KG
+
+
+        RADIUS
+
+        695508 KM
+
+
+        ROTATION LENGTH
+
+        588 HOURS
+
+
+        SURFACE TEMP.
+
+        5,778 K'
       objectReference: {fileID: 0}
     - target: {fileID: 3199620748848143013, guid: eeca5d28de6a17940948cb7cd3f9afc8,
         type: 3}
       propertyPath: panel2Info
-      value: Sun info 2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3199620748848143013, guid: eeca5d28de6a17940948cb7cd3f9afc8,
         type: 3}
