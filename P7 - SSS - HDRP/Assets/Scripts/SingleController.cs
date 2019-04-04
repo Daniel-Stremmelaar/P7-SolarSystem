@@ -100,7 +100,7 @@ public class SingleController : MonoBehaviour
     private void ToSurface()
     {
         print("to surface");
-        if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
+        if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[currentList].objects[currentPlanet].surface).name && lists[currentList].objects[currentPlanet].surface > 0)
         {
             SceneManager.LoadScene(lists[listNr].objects[number].surface);
         }
@@ -125,7 +125,7 @@ public class SingleController : MonoBehaviour
         player.transform.position = activePlanet.GetComponent<Planet>().position;
         activePlanet.SetActive(true);
 
-        if(lists[listNr].objects[number].surface != 0)
+        if(lists[listNr].objects[number].surface > 0)
         {
             surface.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = lists[listNr].objects[number].name + " surface";
         }
