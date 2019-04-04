@@ -28,7 +28,7 @@ public class SingleController : MonoBehaviour
     public List<Lister> lists = new List<Lister>();
 
     [Header("UI")]
-    public Text planetName;
+    public TextMeshProUGUI planetName;
     public Image planetSprite;
     public Button previous;
     public Button next;
