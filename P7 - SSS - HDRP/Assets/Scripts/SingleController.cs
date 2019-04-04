@@ -11,7 +11,6 @@ public class SingleController : MonoBehaviour
     public bool activeMenu;
 
     [Header("Data")]
-    //public List<GameObject> planets = new List<GameObject>();
     public int number;
     public int currentPlanet;
     public int listNr;
@@ -62,39 +61,21 @@ public class SingleController : MonoBehaviour
 
     void Update()
     {
-        //if button, menu toggle
-        /*
-        if (activeMenu == true)
+        if (Input.GetButtonDown("Horizontal"))
         {
-            // Control scheme 1: travel
-
-            // if button, travel to surface of current planet
-
-            else
+            if(Input.GetAxis("Horizontal") > 0)
             {
-                // Control scheme 2: zoom
-                if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
-                {
-                    activePlanet.gameObject.transform.localScale *= upScale;
-                }
-
-                if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
-                {
-                    activePlanet.gameObject.transform.localScale /= upScale;
-                }
-
-                if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
-                {
-                    Time.timeScale *= upScale;
-                }
-
-                if (trackPad.GetAxis(inputSource).x < -0.7 && trackPress.GetStateDown(inputSource))
-                {
-                    Time.timeScale /= upScale;
-                }
+                Time.timeScale *= upScale;
             }
-            */
-
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                Time.timeScale /= upScale;
+            }
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            Time.timeScale = 1;
+        }
     }
 
     private void ExitGame()
