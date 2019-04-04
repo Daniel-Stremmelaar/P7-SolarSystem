@@ -148,20 +148,27 @@ public class SingleController : MonoBehaviour
             surface.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
         }
 
-        if (lists[listNr].objects[number].moons.Count < 1)
+        if (listNr == 0)
         {
-            listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+            if (lists[listNr].objects[number].moons.Count < 1)
+            {
+                listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+            }
+            else
+            {
+                if (listNr == 0)
+                {
+                    listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
+                }
+                if (listNr == 1)
+                {
+                    listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+                }
+            }
         }
-        else
+        if(listNr == 1)
         {
-            if (listNr == 0)
-            {
-                listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
-            }
-            if (listNr == 1)
-            {
-                listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
-            }
+            listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
         }
         
         //change panel to planet info
