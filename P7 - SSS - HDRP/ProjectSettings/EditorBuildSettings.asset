@@ -11,4 +11,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: e799ff8b64157fc4c8f729ee4e302e0a
+  - enabled: 1
+    path: Assets/Scenes/Planets/Sun.unity
+    guid: e7c192a835051204988a82f38124ba45
+  - enabled: 1
+    path: Assets/Scenes/Planets/Mercury.unity
+    guid: 5842e2e6e160839489333ad532fb3442
+  - enabled: 1
+    path: Assets/Scenes/Planets/Venus.unity
+    guid: f41f0c3061fa77d41b04a3c9191268ec
+  - enabled: 1
+    path: Assets/Scenes/Planets/Earth.unity
+    guid: 70c0dc52baddacf47b8246dca3e2c691
+  - enabled: 1
+    path: Assets/Scenes/Planets/Mars.unity
+    guid: 99252a9dcfeb75e4d91aadf0613db0c7
+  - enabled: 1
+    path: Assets/Scenes/Planets/Jupiter.unity
+    guid: 4d7fee5403ec4544788d82b1ac669762
+  - enabled: 1
+    path: Assets/Scenes/Planets/Saturn.unity
+    guid: b966a4402b45fc44f96baaefbf156640
+  - enabled: 1
+    path: Assets/Scenes/Planets/Uranus.unity
+    guid: d965ea943cf5e114ba9f6eec89c80b19
+  - enabled: 1
+    path: Assets/Scenes/Planets/Neptune.unity
+    guid: 12b122a3e6d78dc4cad4e17aed8157d7
+  - enabled: 1
+    path: Assets/Scenes/Planets/Pluto.unity
+    guid: ad3255d2119407648a9e82d20e318c34
   m_configObjects: {}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SingleController : MonoBehaviour
 {
@@ -120,38 +121,38 @@ public class SingleController : MonoBehaviour
 
         if(lists[listNr].objects[number].surface != 0)
         {
-            surface.gameObject.GetComponentInChildren<Text>().text = lists[listNr].objects[number].name + " surface";
+            surface.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = lists[listNr].objects[number].name + " surface";
         }
         else
         {
-            surface.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+            surface.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Unavailable";
         }
 
         if (listNr == 0)
         {
             if (lists[listNr].objects[number].moons.Count < 1)
             {
-                listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+                listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Unavailable";
             }
             else
             {
                 if (listNr == 0)
                 {
-                    listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
+                    listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "To Moons";
                 }
                 if (listNr == 1)
                 {
-                    listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+                    listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "To Planets";
                 }
             }
         }
         if(listNr == 1)
         {
-            listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+            listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "To Planets";
         }
 
-        info1.GetComponent<Text>().text = lists[currentList].objects[currentPlanet].panel1Info;
-        info2.GetComponent<Text>().text = lists[currentList].objects[currentPlanet].panel2Info;
+        info1.GetComponent<TextMeshProUGUI>().text = lists[currentList].objects[currentPlanet].panel1Info;
+        info2.GetComponent<TextMeshProUGUI>().text = lists[currentList].objects[currentPlanet].panel2Info;
 
     }
 
@@ -214,16 +215,16 @@ public class SingleController : MonoBehaviour
         {
             if (listNr == 0)
             {
-                listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
+                listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "To Moons";
             }
             if (listNr == 1)
             {
-                listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+                listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "To Planets";
             }
         }
         else
         {
-            listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+            listChange.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Unavailable";
         }
     }
 }
