@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Valve.VR;
-using Valve.VR.InteractionSystem;
 
-public class SingleController : VRController
+public class SingleController : MonoBehaviour
 {
     [Header("Controller")]
-    public SteamVR_Action_Boolean menu;
-    public SteamVR_Action_Vector2 trackPad;
-    public SteamVR_Action_Boolean trackPress;
     public GameObject UIPanel;
     public bool activeMenu;
 
@@ -26,7 +21,6 @@ public class SingleController : VRController
     public GameObject activePlanet;
     public float upScale;
     public Lister heavenBodies;
-    //public List<Sprite> images = new List<Sprite>();
 
     [Header("Objects")]
     public List<Lister> lists = new List<Lister>();
@@ -34,6 +28,15 @@ public class SingleController : VRController
     [Header("UI")]
     public Text planetName;
     public Image planetSprite;
+    public Button previous;
+    public Button next;
+    public Button surface;
+    public Button galaxy;
+    public Button travel;
+    public Button toggle;
+    public Button toggleTwo;
+    public Button listChange;
+    public Button exit;
 
     //By Casper
     [Header("Event")]
@@ -48,95 +51,73 @@ public class SingleController : VRController
         Travel();
         activeMenu = true;
         UIPanel.SetActive(activeMenu);
+
+        previous.onClick.AddListener(delegate { Select(-1); });
+        next.onClick.AddListener(delegate { Select(1); });
+        surface.onClick.AddListener(ToSurface);
+        travel.onClick.AddListener(Travel);
+        toggle.onClick.AddListener(MenuToggle);
+        toggleTwo.onClick.AddListener(MenuToggle);
+        listChange.onClick.AddListener(delegate { Browse(1); });
+        exit.onClick.AddListener(ExitGame);
     }
 
     void Update()
     {
-
-        //delete later
-        if (Input.GetButtonDown("Fire1") == true)
-        {
-            // ev.StartEvents();
-        }
-
-        if (menu.GetStateDown(inputSource))
-        {
-            activeMenu = !activeMenu;
-            UIPanel.SetActive(activeMenu);
-        }
-
+        //if button, menu toggle
+        /*
         if (activeMenu == true)
         {
             // Control scheme 1: travel
-            if (trigger.GetStateDown(inputSource))
+
+            // if button, travel to surface of current planet
+
+            else
             {
-                print("travel to planet");
-                if (number == currentPlanet && listNr == currentList)
+                // Control scheme 2: zoom
+                if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
                 {
-                    print("to surface");
-                    if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
-                    {
-                        SceneManager.LoadScene(lists[listNr].objects[number].surface);
-                    }
+                    activePlanet.gameObject.transform.localScale *= upScale;
                 }
-                else
+
+                if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
                 {
-                    print("travel");
-                    Travel();
+                    activePlanet.gameObject.transform.localScale /= upScale;
+                }
+
+                if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
+                {
+                    Time.timeScale *= upScale;
+                }
+
+                if (trackPad.GetAxis(inputSource).x < -0.7 && trackPress.GetStateDown(inputSource))
+                {
+                    Time.timeScale /= upScale;
                 }
             }
+            */
 
-            //trackpad axis: horizontal left number, vertical right number. Left/down = -1, right/up = 1
+    }
 
-            if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
-            {
-                print("planet count +1");
-                Select(1);
-            }
+    private void ExitGame()
+    {
+        Application.Quit();
+    }
 
-            if (trackPad.GetAxis(inputSource).x < -0.7 && trackPress.GetStateDown(inputSource))
-            {
-                print("planet count -1");
-                Select(-1);
-            }
+    private void MenuToggle()
+    {
+        activeMenu = !activeMenu;
+        UIPanel.SetActive(activeMenu);
+        toggleTwo.gameObject.SetActive(!activeMenu);
+    }
 
-            if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
-            {
-                print("list count +1");
-                Browse(1);
-            }
-
-            if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
-            {
-                print("list count -1");
-                Browse(-1);
-            }
-        }
-
-        else
+    private void ToSurface()
+    {
+        print("to surface");
+        if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(lists[listNr].objects[number].surface).name)
         {
-            // Control scheme 2: zoom
-            if (trackPad.GetAxis(inputSource).y > 0.7 && trackPress.GetStateDown(inputSource))
-            {
-                activePlanet.gameObject.transform.localScale *= upScale;
-            }
-
-            if (trackPad.GetAxis(inputSource).y < -0.7 && trackPress.GetStateDown(inputSource))
-            {
-                activePlanet.gameObject.transform.localScale /= upScale;
-            }
-
-            if (trackPad.GetAxis(inputSource).x > 0.7 && trackPress.GetStateDown(inputSource))
-            {
-                Time.timeScale *= upScale;
-            }
-
-            if (trackPad.GetAxis(inputSource).x < -0.7 && trackPress.GetStateDown(inputSource))
-            {
-                Time.timeScale /= upScale;
-            }
+            SceneManager.LoadScene(lists[listNr].objects[number].surface);
         }
-
     }
 
     private void Travel()
@@ -157,6 +138,32 @@ public class SingleController : VRController
         Time.timeScale = 1;
         player.transform.position = activePlanet.GetComponent<Planet>().position;
         activePlanet.SetActive(true);
+
+        if(lists[listNr].objects[number].surface != 0)
+        {
+            surface.gameObject.GetComponentInChildren<Text>().text = lists[listNr].objects[number].name + " surface";
+        }
+        else
+        {
+            surface.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+        }
+
+        if (lists[listNr].objects[number].moons.Count < 1)
+        {
+            listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+        }
+        else
+        {
+            if (listNr == 0)
+            {
+                listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
+            }
+            if (listNr == 1)
+            {
+                listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+            }
+        }
+        
         //change panel to planet info
         //ok ;) by Casper
         if (ev != null)
@@ -220,6 +227,20 @@ public class SingleController : VRController
             }
         }
 
-
+        if(moonList.objects.Count > 0)
+        {
+            if (listNr == 0)
+            {
+                listChange.gameObject.GetComponentInChildren<Text>().text = "To Moons";
+            }
+            if (listNr == 1)
+            {
+                listChange.gameObject.GetComponentInChildren<Text>().text = "To Planets";
+            }
+        }
+        else
+        {
+            listChange.gameObject.GetComponentInChildren<Text>().text = "Unavailable";
+        }
     }
 }
