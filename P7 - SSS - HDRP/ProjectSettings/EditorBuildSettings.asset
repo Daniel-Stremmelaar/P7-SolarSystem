@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Planets/Pluto.unity
     guid: ad3255d2119407648a9e82d20e318c34
+  - enabled: 1
+    path: Assets/Scenes/GameDuplicate.unity
+    guid: 2044cb74be82bf14e9aa30fad9a8f822
   m_configObjects: {}

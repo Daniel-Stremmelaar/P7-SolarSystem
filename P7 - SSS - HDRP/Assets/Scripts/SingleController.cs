@@ -53,6 +53,7 @@ public class SingleController : MonoBehaviour
         previous.onClick.AddListener(delegate { Select(-1); });
         next.onClick.AddListener(delegate { Select(1); });
         surface.onClick.AddListener(ToSurface);
+        galaxy.onClick.AddListener(Galaxy);
         travel.onClick.AddListener(Travel);
         toggle.onClick.AddListener(MenuToggle);
         toggleTwo.onClick.AddListener(MenuToggle);
@@ -89,6 +90,11 @@ public class SingleController : MonoBehaviour
         activeMenu = !activeMenu;
         UIPanel.SetActive(activeMenu);
         toggleTwo.gameObject.SetActive(!activeMenu);
+    }
+    
+    private void Galaxy()
+    {
+        SceneManager.LoadScene(11);
     }
 
     private void ToSurface()
